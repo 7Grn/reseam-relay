@@ -1,0 +1,10 @@
+[everything]
+# Repositories left out of the everything feed. Private repositories are always left out.
+exclude = []
+
+[releases]
+prereleases = false
+
+# Repositories whose published releases go to the releases feed, with the name used in posts.
+[releases.repos]
+"reseam/patches" = "Reseam Patches"
