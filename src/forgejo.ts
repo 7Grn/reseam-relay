@@ -22,6 +22,7 @@ export type Release = {
   html_url: string;
   draft: boolean;
   prerelease: boolean;
+  published_at: string;
 };
 
 export type ActionRun = {

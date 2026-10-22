@@ -17,6 +17,7 @@ export type TelegramChat = { chatId: string; threadId?: string };
 
 export type Config = {
   port: number;
+  dbPath: string;
   webhookSecret: string;
   settings: Settings;
   discord: { feed?: string; releases?: string };
@@ -38,6 +39,7 @@ export async function readConfig(env: NodeJS.ProcessEnv = process.env): Promise<
 
   return {
     port: Number(env.PORT || 4100),
+    dbPath: env.DB_PATH || "data/relay.db",
     webhookSecret,
     settings: parseSettings(await Bun.file(env.CONFIG_PATH || "config.toml").text()),
     discord: { feed: env.DISCORD_FEED_WEBHOOK, releases: env.DISCORD_RELEASES_WEBHOOK },
